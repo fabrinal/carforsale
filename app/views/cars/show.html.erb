@@ -1,0 +1,19 @@
+<h1><%= @car.brand.name.to_s.capitalize %> - <%= @car.type.name.to_s.capitalize %> - <%=  @car.assembly_year %></h1>
+
+<ul>
+  <li>
+    <%= @car.price.to_s %>
+  </li>
+  <li>
+    <%= @car.assembly_year.to_s %>
+  </li>
+  <li>
+    <%= @car.purchase_year.to_s %>
+  </li>
+  <li>
+    <%= @car.total_distance.to_s %>
+  </li>
+  <li>
+    <%= @car.engine_volume.to_s %>
+  </li>
+</ul>

@@ -1,0 +1,9 @@
+<h1>All Cars</h1>
+<ul>
+  <% @cars.each do |car| %>
+  <li>
+    <%= car.brand.name.to_s.capitalize %> - <%= car.type.name.to_s.capitalize %> - <%= car.assembly_year %><br>
+    <%= link_to "detail", car_path(car) %> <%= link_to "edit", edit_car_path(car) %> <%= link_to "delete", car_path(car),method: :delete %>
+  </li>
+  <% end %>
+</ul>

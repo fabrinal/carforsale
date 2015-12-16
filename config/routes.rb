@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cars
   resources :types
   resources :brands
   # The priority is based upon order of creation: first created -> highest priority.

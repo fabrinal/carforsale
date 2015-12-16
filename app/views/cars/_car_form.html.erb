@@ -1,0 +1,32 @@
+<%= form_for @car do |f| %>
+  <%= render "shared/errors", object: @car %>
+  <div>
+    <%= f.label :brand %>
+    <%= f.select :brand_id, options_from_collection_for_select(@brands,"id","name",@car.brand_id),{include_blank: "Select brand",id: "brand_id"} %>
+  </div>
+  <div>
+    <%= f.label :type %>
+    <%= f.select :type_id, options_from_collection_for_select(@types,"id","name",@car.type_id),{include_blank: "Select type",id: "type_id"} %>
+  </div>
+  <div>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </div>
+  <div>
+    <%= f.label :assembly_year %>
+    <%= f.select :assembly_year, options_for_select(@years,@car.assembly_year),{include_blank: "Select year"} %>
+  </div>
+  <div>
+    <%= f.label :purchase_year %>
+    <%= f.select :purchase_year, options_for_select(@years,@car.purchase_year),{include_blank: "Select year"} %>
+  </div>
+  <div>
+    <%= f.label :total_distance %>
+    <%= f.number_field :total_distance %>
+  </div>
+  <div>
+    <%= f.label :engine_volume %>
+    <%= f.number_field :engine_volume %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  brand_id: 
+  type_id: 
+  price: 9.99
+  total_distance: 1
+  engine_volume: 1
+  assembly_year: 1
+  purchase_year: 1
+
+two:
+  brand_id: 
+  type_id: 
+  price: 9.99
+  total_distance: 1
+  engine_volume: 1
+  assembly_year: 1
+  purchase_year: 1
