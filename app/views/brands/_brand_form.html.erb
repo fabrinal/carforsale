@@ -1,5 +1,10 @@
+<h1>Add Brand</h1>
+
 <%= form_for @brand do |f| %>
   <%= render "shared/errors", object: @brand %>
-  <%= f.text_field :name, class: "form-control" %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
   <%= f.submit "Save Brand" %>
 <% end %>
