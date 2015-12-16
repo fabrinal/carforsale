@@ -1,0 +1,5 @@
+<%= form_for @brand do |f| %>
+  <%= render "shared/errors", object: @brand %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.submit "Save Brand" %>
+<% end %>
