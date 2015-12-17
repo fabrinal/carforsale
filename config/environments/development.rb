@@ -1,9 +1,11 @@
 Rails.application.configure do
-  # Settings specified here will take precedence over those in config/application.rb.
-
-  # In the development environment your application's code is reloaded on
-  # every request. This slows down response time but is perfect for development
-  # since you don't have to restart the web server when you make code changes.
+  Paperclip.options[:command_path] = "/usr/local/bin/"
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_host_name => 's3-ap-southeast-1.amazonaws.com',
+    :bucket => 'fabrinalcarforsale',
+    :path => '/development/:class/:id/:style/:filename'
+  }
   config.cache_classes = false
 
   # Do not eager load code on boot.

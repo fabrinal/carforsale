@@ -53,7 +53,7 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:brand_id,:type_id,:price,:total_distance,:engine_volume,:assembly_year,:purchase_year)
+    params.require(:car).permit(:brand_id,:type_id,:price,:total_distance,:engine_volume,:assembly_year,:purchase_year,:photo)
   end
 
   def set_collections

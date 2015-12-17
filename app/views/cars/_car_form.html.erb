@@ -8,6 +8,11 @@
     <%= f.label :type %>
     <%= f.select :type_id, options_from_collection_for_select(@types,"id","name",@car.type_id),{include_blank: "Select type",id: "type_id"} %>
   </div>
+
+  <div>
+    <%= f.file_field :photo, placeholder: "Upload Car Photo"%>
+  </div>
+
   <div>
     <%= f.label :price %>
     <%= f.number_field :price %>
