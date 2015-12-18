@@ -1,6 +1,8 @@
 class CarsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index,:show,:set_collections,:set_car]
   before_action :set_car, only: [:show,:edit,:destroy,:update]
   before_action :set_collections, only: [:new,:edit]
+
   def index
     @cars = Car.all
   end

@@ -1,4 +1,5 @@
 class BrandsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index,:set_brand]
   before_action :get_brand, only: [:edit,:update,:destroy]
   def index
     @brands = Brand.all
@@ -35,7 +36,7 @@ class BrandsController < ApplicationController
 
   private
 
-  def get_brand
+  def set_brand
     @brand = Brand.find(params[:id])
   end
   def brand_params
