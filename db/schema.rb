@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151217060629) do
+ActiveRecord::Schema.define(version: 20151218004315) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
@@ -58,9 +58,9 @@ ActiveRecord::Schema.define(version: 20151217060629) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "name"
-    t.string   "phone"
-    t.string   "address"
+    t.string   "name",                   default: "", null: false
+    t.string   "phone",                  default: "", null: false
+    t.text     "address"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
