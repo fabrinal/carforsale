@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'bootstrap-sass'
 gem 'paperclip'
 gem 'aws-sdk-v1'
 gem 'devise'
