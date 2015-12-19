@@ -1,0 +1,57 @@
+<div class="col-md-9">
+
+  <div class="row carousel-holder">
+
+    <div class="col-md-12">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <% @carousel_items.count.times do |i| %>
+            <li data-target="#carousel-example-generic" data-slide-to="<%= i %>"></li>
+          <% end %>
+        </ol>
+        <div class="carousel-inner">
+          <% @carousel_items.each_with_index do |car,index| %>
+            <% if index == 0 %>
+              <div class="item active">
+            <% else %>
+                <div class="item">
+            <% end %>
+              <%= image_tag car.photo.url(:large), class: "slide-image" %>
+            </div>
+          <% end %>
+        </div>
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <% @cars.each do |car| %>
+      <div class="col-sm-4 col-lg-4 col-md-4">
+        <div class="thumbnail">
+          <%= image_tag car.photo.url(:medium),class: "img-responsive" %>
+          <div class="caption">
+            <a href="<%= car_path(car) %>"><h4 class="pull-right"><%= car.type.name %></h4>
+            <h4><%= car.brand.name %></a>
+            </h4>
+            <ul>
+              <li>
+                Assembly Year: <%= car.assembly_year.to_s %>
+              </li>
+              <li>
+                Price: <%= car.price.to_s %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
