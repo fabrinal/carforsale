@@ -1,8 +1,13 @@
 class TypesController < ApplicationController
-  before_action :get_type, only: [:edit,:update,:destroy]
+  before_action :set_type, only: [:edit,:update,:destroy,:show]
+  skip_before_action :authenticate_user!, only: :show
   def new
     @type = Type.new
     @brands = Brand.all
+  end
+
+  def show
+    @cars = Car.where(type_id: @type.id)
   end
 
   def create
@@ -31,7 +36,7 @@ class TypesController < ApplicationController
   end
 
   private
-  def get_type
+  def set_type
     @type = Type.find(params[:id])
   end
 

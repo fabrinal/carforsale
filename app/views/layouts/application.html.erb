@@ -26,7 +26,7 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li>
-            <%= link_to "All Brands", brands_path %>
+            <%= link_to "All Brands & Type", brands_path %>
           </li>
           <%= render 'devise/shared/links' %>
         </ul>
@@ -51,7 +51,7 @@
         <p class="lead">CarForSale</p>
         <div class="list-group">
           <% @brands.each do |brand| %>
-            <%= link_to brand.name.to_s.capitalize, "#", class: "list-group-item" %>
+            <%= link_to brand.name.to_s.capitalize, brand_path(brand), class: "list-group-item" %>
           <% end %>
         </div>
       </div>
@@ -70,7 +70,7 @@
     <footer>
       <div class="row">
         <div class="col-lg-12">
-          <p>Copyright &copy; CarForSale 2014</p>
+          <p>Copyright &copy; CarForSale 2015</p>
         </div>
       </div>
     </footer>
