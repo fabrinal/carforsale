@@ -2,6 +2,15 @@
   <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
   </li>
+  <li>
+    <%= link_to "Add Car", new_car_path %>
+  </li>
+  <li>
+    <%= link_to "Add Brand", new_brand_path %>
+  </li>
+  <li>
+    <%= link_to "Add Type", new_type_path %>
+  </li>
 <% else %>
   <li>
   <%= link_to('Login', new_user_session_path)  %>

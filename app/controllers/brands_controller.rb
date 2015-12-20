@@ -1,8 +1,12 @@
 class BrandsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index,:set_brand]
-  before_action :get_brand, only: [:edit,:update,:destroy]
+  skip_before_action :authenticate_user!, only: [:index,:set_brand,:show]
+  before_action :set_brand, only: [:edit,:update,:destroy,:show]
   def index
     @brands = Brand.all
+  end
+
+  def show
+    @cars = Car.where(brand_id: @brand.id)
   end
 
   def new
