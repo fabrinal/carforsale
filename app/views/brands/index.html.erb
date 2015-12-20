@@ -1,18 +1,22 @@
+<div class="col-md-9">
 <h1>Car Brands</h1>
-<%= link_to "Add Car Brand", new_brand_path %>
-<%= link_to "Add Car Type", new_type_path %>
+<% if user_signed_in? %>
+  <%= link_to "Add Car Brand", new_brand_path %>
+  <%= link_to "Add Car Type", new_type_path %>
+<% end %>
 <ul>
   <% @brands.each do |brand| %>
       <li>
         <%= brand.name.to_s.capitalize %>
-        <%= link_to "Edit", edit_brand_path(brand) %> <%= link_to "Delete", brand_path(brand), method: :delete %>
+        <%= link_to("Edit", edit_brand_path(brand)) + ' ' + link_to("Delete", brand_path(brand), method: :delete) if user_signed_in? == true %>
         <ul>
           <% brand.types.each do |type| %>
             <li>
-              <%= type.name.to_s.capitalize %> <%= link_to "Edit", edit_type_path(type) %> <%= link_to "Delete", type_path(type), method: :delete %>
+              <%= type.name.to_s.capitalize %> <%= link_to("Edit", edit_type_path(type)) + ' ' + link_to("Delete", type_path(type), method: :delete) if user_signed_in? == true %>
             </li>
           <% end %>
         </ul>
       </li>
   <% end %>
 </ul>
+</div>
