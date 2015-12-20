@@ -8,7 +8,7 @@ class CarsController < ApplicationController
   end
 
   def show
-    #code
+    @user = User.first
   end
 
   def new

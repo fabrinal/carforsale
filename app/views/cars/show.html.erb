@@ -1,22 +1,38 @@
-<h1><%= @car.brand.name.to_s.capitalize %> - <%= @car.type.name.to_s.capitalize %> - <%=  @car.assembly_year %></h1>
+<div class="col-md-9">
 
-<ul>
-  <li>
-    <%= image_tag @car.photo %>
-  </li>
-  <li>
-    <%= @car.price.to_s %>
-  </li>
-  <li>
-    <%= @car.assembly_year.to_s %>
-  </li>
-  <li>
-    <%= @car.purchase_year.to_s %>
-  </li>
-  <li>
-    <%= @car.total_distance.to_s %>
-  </li>
-  <li>
-    <%= @car.engine_volume.to_s %>
-  </li>
-</ul>
+  <div class="thumbnail">
+    <%= image_tag @car.photo.url(:large), class: "img-responsive" %>
+    <div class="caption-full">
+      <h4 class="pull-right">Rp <%= @car.price.to_s %></h4>
+      <h4>
+        <a href="#"><%= @car.brand.name %> - <%= @car.type.name %></a>
+      </h4>
+      <p>
+        <ul>
+          <li>
+            Assembly Year: <%= @car.assembly_year.to_s %>
+          </li>
+          <li>
+            First Purchase Year: <%= @car.purchase_year.to_s %>
+          </li>
+          <li>
+            Total Distance: <%= @car.total_distance.to_s %>
+          </li>
+          <li>
+            Engine Volume: <%= @car.engine_volume.to_s %>
+          </li>
+        </ul>
+        <h3>Get more info:</h3>
+        Contact:
+        <ul>
+          <li>
+            Name: <%= @user.name.capitalize %>
+          </li>
+          <li>
+            Phone: <%= @user.phone %>
+          </li>
+        </ul>
+      </p>
+    </div>
+  </div>
+</div>
