@@ -1,10 +1,9 @@
-<h1>Add Brand</h1>
-
-<%= form_for @brand do |f| %>
-  <%= render "shared/errors", object: @brand %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control" %>
-  </div>
-  <%= f.submit "Save Brand" %>
-<% end %>
+  <h3>New/Update Brand</h3>
+  <%= form_for @brand do |f| %>
+    <%= render "shared/errors", object: @brand %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+    <%= f.submit "Save Brand", class: "btn btn-primary" %>
+  <% end %>

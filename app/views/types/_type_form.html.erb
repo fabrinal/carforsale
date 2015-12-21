@@ -1,14 +1,15 @@
+<h3>New/Update Type</h3>
 <%= form_for @type do |f| %>
   <%= render "shared/errors", object: @type %>
-  <div>
+  <div class="form-group">
     <%= f.label "Select brand:" %>
-    <%= f.select :brand_id, options_from_collection_for_select(@brands,"id","name",@type.brand_id),{include_blank: "Select brand", id: "brand_id"} %>
+    <%= f.select :brand_id, options_from_collection_for_select(@brands,"id","name",@type.brand_id),{include_blank: "Select brand", id: "brand_id"},class: "form-control" %>
   </div>
 
-  <div>
+  <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
   </div>
 
-  <%= f.submit "Save Type" %>
+  <%= f.submit "Save Type", class: "btn btn-primary" %>
 <% end %>
