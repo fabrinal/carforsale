@@ -1,7 +1,7 @@
 <div class="col-md-9">
 
   <div class="thumbnail">
-    <%= image_tag @car.photo.url(:large), class: "img-responsive" %>
+    <%= image_tag @car.photo.nil? ? @car.photo.url(:large) : "large_notavailable.jpg", class: "img-responsive" %>
     <div class="caption-full">
       <h4 class="pull-right">Rp <%= @car.price.to_s %></h4>
       <h4>
