@@ -4,7 +4,11 @@ Rails.application.configure do
     :storage => :s3,
     :s3_host_name => 's3-ap-southeast-1.amazonaws.com',
     :bucket => 'fabrinalcarforsale',
-    :path => '/production/:class/:id/:style/:filename'
+    :path => '/production/:class/:id/:style/:filename',
+    :s3_credentials => {
+    :access_key_id  => ENV['S3_KEY'],
+                        :secret_access_key => ENV['S3_SECRET']
+                      }
   }
   # Code is not reloaded between requests.
   config.cache_classes = true
