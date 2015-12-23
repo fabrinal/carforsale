@@ -1,12 +1,7 @@
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   Paperclip.options[:command_path] = "/usr/local/bin/"
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_host_name => 's3-ap-southeast-1.amazonaws.com',
-    :bucket => 'fabrinalcarforsale',
-    :path => '/development/:class/:id/:style/:filename'
-  }
+
   config.cache_classes = false
 
   # Do not eager load code on boot.
