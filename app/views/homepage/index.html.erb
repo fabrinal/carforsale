@@ -34,8 +34,8 @@
   <div class="row">
     <% @cars.each do |car| %>
       <div class="col-sm-4 col-lg-4 col-md-4">
-        <div class="thumbnail">
-          <%= image_tag car.photo_file_name.nil? ? "small_notavailable.jpg" : car.photo.url(:medium),class: "img-responsive" %>
+        <div class="thumbnail thumbnail-home">
+          <%= image_tag car.photo_file_name.nil? ? "small_notavailable.jpg" : car.photo.url(:medium) %>
           <div class="caption">
             <a href="<%= car_path(car) %>"><h4 class="pull-right"><%= car.type.name %></h4>
             <h4><%= car.brand.name %></a>
